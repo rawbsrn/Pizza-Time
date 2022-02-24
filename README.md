@@ -35,8 +35,14 @@ Code: Pizza.assignId()
 Expected Output: 1
 
 
-Describe:Toppings()
+Describe: Toppings()
+
 Test:"It should return a Toppings object with one property for a topping and its cost
 Code: let myTop = new Toppings("Cheese", 1);
 Expected Output: Toppings {"Cheese" , 1}
 
+Decribe: Toppings.prototype.list()
+
+Test:"It should return all of the toppings and their costs"
+Code: Toppings.list()
+Expected Output: "Cheese Costs 1 USD"

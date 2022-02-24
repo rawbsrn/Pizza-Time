@@ -24,23 +24,27 @@ Pizza.prototype.removeTop = function(top) {
   }
   delete this.toppings[top];
   return true;
-}
+};
 
 Pizza.prototype.findTop = function(topId) {
   if (this.toppings[topId] != undefined) {
     return this.toppings[topId];
   }
   return false;
-}
+};
 
 Pizza.prototype.changeSize = function(size) {
   return this.size = size;
-}
+};
 
 function Toppings(topping, cost){
   this.topping = topping;
   this.cost = cost;
 }
+
+Toppings.prototype.list = function() {
+  return this.topping + " " + "Costs" + " " + this.cost + " " + "USD";
+};
 
 let pizza = new Pizza("small");
 let cheese = new Toppings("cheese", 1);
