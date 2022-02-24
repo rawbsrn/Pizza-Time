@@ -68,5 +68,15 @@ Toppings.prototype.list = function() {
 };
 
 let pizza = new Pizza("small");
-let cheese = new Toppings("Cheese", 1);
-let pep = new Toppings("Pepperoni", 3);
+const cheese = new Toppings("Cheese", 1);
+const pepperoni = new Toppings("Pepperoni", 2);
+const bacon = new Toppings("Bacon", 2);
+const chicken = new Toppings("Chicken", 2);
+const onion = new Toppings("Onion", 1);
+const peppers = new Toppings("Peppers", 1);
+const pineapple = new Toppings("Pineapple", 5); //eww
+const chilis = new Toppings("Chili Peppers", 1);
+const mushrooms = new Toppings("Mushrooms", 1);
+const sausage = new Toppings("Sausage", 2);
+
+
