@@ -22,10 +22,10 @@ Test: "It should return a Pizza object with a specified size
 Code: Pizza.changeSize("medium")
 Expected Output: Pizza { toppings: =["cheese"], size: "medium"}
 
-Describe: Pizza.prototype.cost()
+Describe: Pizza.prototype.costCalc()
 
 Test: "It should return a number based on the number of toppings and size of the pizza
-Code: Pizza.cost()
+Code: Pizza.costCalc()
 Expected Output: 16
 
 Describe: Pizza.prototype.assignId()
