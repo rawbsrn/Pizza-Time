@@ -1,8 +1,8 @@
 Describe: Pizza()
 
-Test: "It should return a Pizza object with one property for toppings and size"
-Code: let myPizza = new Pizza(["cheese"], "large");
-Expected Output: Pizza { toppings: ["cheese"], size: "large" }
+Test: "It should return a Pizza object with one property for size"
+Code: let myPizza = new Pizza("large");
+Expected Output: Pizza {size: "large" }
 
 Describe: Pizza.prototype.addTop("topping")
 
@@ -33,4 +33,9 @@ Describe: Pizza.prototype.assignId()
 Test: "It should return a number based on the number of the currentId issued"
 Code: Pizza.assignId()
 Expected Output: 1
+
+Describe:Toppings()
+Test:"It should return a Toppings object with one property for a topping and its cost
+Code: let myTop = new Toppings("Cheese", 1);
+Expected Output: Toppings {"Cheese" , 1}
 
