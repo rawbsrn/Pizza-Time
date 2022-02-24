@@ -70,4 +70,3 @@ Toppings.prototype.list = function() {
 let pizza = new Pizza("small");
 let cheese = new Toppings("Cheese", 1);
 let pep = new Toppings("Pepperoni", 3);
-// pizza.toppings['2'].cost
