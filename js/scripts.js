@@ -14,7 +14,7 @@ Pizza.prototype.assignTopId = function() {
 
 Pizza.prototype.addTop = function(topping) {
   this.topId = this.assignTopId();
-  this.toppings[topping.id] = topping;
+  this.toppings[this.topId] = topping;
 };
 
 Pizza.prototype.removeTop = function(top) {
