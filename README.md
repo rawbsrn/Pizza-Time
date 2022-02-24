@@ -28,3 +28,9 @@ Test: "It should return a number based on the number of toppings and size of the
 Code: Pizza.cost()
 Expected Output: 16
 
+Describe: Pizza.prototype.assignId()
+
+Test: "It should return a number based on the number of the currentId issued"
+Code: Pizza.assignId()
+Expected Output: 1
+
