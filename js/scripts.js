@@ -5,6 +5,7 @@ function Pizza (size) {
   this.size = size;
   this.topId = 0;
   this.totalCost = 0;
+  this.orderId = 0;
 }
 
 Pizza.prototype.assignTopId = function() {
@@ -18,10 +19,10 @@ Pizza.prototype.addTop = function(topping) {
 };
 
 Pizza.prototype.removeTop = function(top) {
-  if (this.toppings[top.id] === undefined) {
+  if (this.toppings[top] === undefined) {
     return false;
   }
-  delete this.toppings[top.id];
+  delete this.toppings[top];
   return true;
 }
 
@@ -30,6 +31,10 @@ Pizza.prototype.findTop = function(topId) {
     return this.toppings[topId];
   }
   return false;
+}
+
+Pizza.prototype.changeSize = function(size) {
+  return this.size = size;
 }
 
 function Toppings(topping, cost){
