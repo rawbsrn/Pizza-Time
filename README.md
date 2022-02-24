@@ -1,5 +1,30 @@
 Describe: Pizza()
 
-Test: "It should return a Pizza object with two properties for toppings and size"
-Code: let myPizza = new Pizza(["anchovies", "onion"], "large");
-Expected Output: Pizza { toppings: ["anchovies", "onion"], size: "large" }
+Test: "It should return a Pizza object with one property for toppings and size"
+Code: let myPizza = new Pizza(["cheese"], "large");
+Expected Output: Pizza { toppings: ["cheese"], size: "large" }
+
+Describe: Pizza.prototype.addTop("topping")
+
+Test: "It should return a Pizza object with an additional property for toppings and size"
+Code: Pizza.addTop("onion")
+Expected Output: Pizza { toppings: =["cheese", "onion"], size: "large"}
+
+Describe: Pizza.prototype.removeTop("topping")
+
+Test: "It should return a Pizza object without a specified property for topping"
+Code: Pizza.addTop("onion")
+Expected Output: Pizza { toppings: =["cheese"], size: "large"}
+
+Describe: Pizza.prototype.changeSize("size")
+
+Test: "It should return a Pizza object with a specified size
+Code: Pizza.changeSize("medium")
+Expected Output: Pizza { toppings: =["cheese"], size: "medium"}
+
+Describe: Pizza.prototype.cost()
+
+Test: "It should return a number based on the number of toppings and size of the pizza
+Code: Pizza.cost()
+Expected Output: 16
+
