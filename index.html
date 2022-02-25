@@ -11,23 +11,27 @@
   <body>
     <div class="container">
       <h1>Order a Pizza!</h1>
-      <div class="row">
           <hr>
-          <h2>Add a Topping:</h2>
+          <h2>Select a Size:</h2>
           <form id="new-topping">
             <div class="form-group">
-              <br>
+              <select class="form-control" id="size">
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select><br>
+              <h2>Select your Toppings:</h2>
               <hr>
-        <input type="checkbox" name="topping" value="Cheese"> Cheese.<br>
-        <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni.<br>
-        <input type="checkbox" name="topping" value="Bacon"> Bacon.<br>
-        <input type="checkbox" name="topping" value="Chicken"> Chicken.<br>
-        <input type="checkbox" name="topping" value="Onion"> Onion.<br>
-        <input type="checkbox" name="topping" value="Peppers"> Peppers.<br>
-        <input type="checkbox" name="topping" value="Pineapple"> Pineapple.<br>
-        <input type="checkbox" name="topping" value="Chilis"> Chili Peppers.<br>
-        <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms<br>
-        <input type="checkbox" name="topping" value="Sausage"> Sausage.<hr>
+        <input type="checkbox" name="topping" value="cheese"> Cheese.<br>
+        <input type="checkbox" name="topping" value="pepperoni"> Pepperoni.<br>
+        <input type="checkbox" name="topping" value="bacon"> Bacon.<br>
+        <input type="checkbox" name="topping" value="chicken"> Chicken.<br>
+        <input type="checkbox" name="topping" value="onion"> Onion.<br>
+        <input type="checkbox" name="topping" value="peppers"> Peppers.<br>
+        <input type="checkbox" name="topping" value="pineapple"> Pineapple.<br>
+        <input type="checkbox" name="topping" value="chilis"> Chili Peppers.<br>
+        <input type="checkbox" name="topping" value="mushrooms"> Mushrooms<br>
+        <input type="checkbox" name="topping" value="sausage"> Sausage.<hr>
               <label for="new-custom-topping-name">Custom Topping Name:</label>
               <input type="text"  class="form-control" id="new-custom-topping-name">
             </div>
@@ -48,7 +52,6 @@
             <div id="buttons">
           </div>
         </div>
-      </div>
     </div>
   </body>
 </html>
