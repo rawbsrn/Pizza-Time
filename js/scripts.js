@@ -5,7 +5,6 @@ function Pizza (size) {
   this.size = size;
   this.topId = 0;
   this.totalCost = 0;
-  this.orderId = 0;
 }
 
 Pizza.prototype.assignTopId = function() {
@@ -62,10 +61,6 @@ function Toppings(topping, cost){
   this.topping = topping;
   this.cost = cost;
 }
-
-Toppings.prototype.list = function() {
-  return this.topping + " " + "costs" + " " + this.cost + " " + "USD";
-};
 
 //User interface logic
 let pizza = new Pizza("Small");

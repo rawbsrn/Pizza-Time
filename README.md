@@ -28,11 +28,16 @@ Test: "It should return a number based on the number of toppings and size of the
 Code: Pizza.costCalc()
 Expected Output: 16
 
-Describe: Pizza.prototype.assignId()
+Describe: Pizza.prototype.assignTopId()
 
 Test: "It should return a number based on the number of the currentId issued"
-Code: Pizza.assignId()
+Code: Pizza.assignTopId()
 Expected Output: 1
+
+Describe: Pizza.prototype.findTop("topId")
+Test: "It should return this.toppings[topId] if it is present in the object, or false if it is not
+Code: Pizza.findTop(1)
+Expected Output: Toppings {topping: 'Cheese', cost: 1}
 
 
 Describe: Toppings()
@@ -40,9 +45,3 @@ Describe: Toppings()
 Test:"It should return a Toppings object with one property for a topping and its cost
 Code: let myTop = new Toppings("Cheese", 1);
 Expected Output: Toppings {"Cheese" , 1}
-
-Decribe: Toppings.prototype.list()
-
-Test:"It should return all of the toppings and their costs"
-Code: Toppings.list()
-Expected Output: "Cheese Costs 1 USD"
