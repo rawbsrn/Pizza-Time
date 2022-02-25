@@ -67,6 +67,7 @@ Toppings.prototype.list = function() {
   return this.topping + " " + "Costs" + " " + this.cost + " " + "USD";
 };
 
+//User interface logic
 let pizza = new Pizza("small");
 const cheese = new Toppings("Cheese", 1);
 const pepperoni = new Toppings("Pepperoni", 2);
@@ -78,5 +79,19 @@ const pineapple = new Toppings("Pineapple", 5); //eww
 const chilis = new Toppings("Chili Peppers", 1);
 const mushrooms = new Toppings("Mushrooms", 1);
 const sausage = new Toppings("Sausage", 2);
+
+$(document).ready(function() {
+  attachContactListeners();
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+    let inputtedCustomTopName = $("input#new-custom-topping-name").val();
+    let inputtedCustomTopCost = parseInt($("input#new-custom-topping-cost").val());
+    $("input#new-custom-topping-name").val("");
+    $("input#new-custom-topping-cost").val("");
+    let customTop = new Toppings (inputtedCustomTopName,inputtedCustomTopCost);
+    pizza.addTop(customTop);
+    // Display pizza deets
+  });
+})
 
 
