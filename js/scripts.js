@@ -39,13 +39,13 @@ Pizza.prototype.changeSize = function(size) {
 
 Pizza.prototype.costCalc = function() {
   switch (this.size) {
-    case ("small"):
+    case ("Small"):
       this.totalCost = 5;
       break;
-    case ("medium"):
+    case ("Medium"):
       this.totalCost = 8;
       break;
-    case ("large"):
+    case ("Large"):
       this.totalCost = 10;
       break;
     default:
@@ -64,11 +64,11 @@ function Toppings(topping, cost){
 }
 
 Toppings.prototype.list = function() {
-  return this.topping + " " + "Costs" + " " + this.cost + " " + "USD";
+  return this.topping + " " + "costs" + " " + this.cost + " " + "USD";
 };
 
 //User interface logic
-let pizza = new Pizza("small");
+let pizza = new Pizza("Small");
 const cheese = new Toppings("Cheese", 1);
 const pepperoni = new Toppings("Pepperoni", 2);
 const bacon = new Toppings("Bacon", 2);
@@ -93,6 +93,10 @@ function displayPizzaDeets(pizzaToShow) {
 $(document).ready(function() {
   $("form#new-topping").submit(function(event) {
     event.preventDefault();
+    $("#show-pizza").show();
+    let size = $("#size").val();
+    pizza.changeSize(size);
+    $(".size").html(pizza.size);
     $("input:checkbox[name=topping]:checked").each(function() {
       const inputtedTopping = $(this).val();
       switch (inputtedTopping) {
