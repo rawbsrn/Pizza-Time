@@ -142,6 +142,8 @@ $(document).ready(function() {
     let customTop = new Toppings (inputtedCustomTopName,inputtedCustomTopCost);
     pizza.addTop(customTop);}
     displayPizzaDeets(pizza);
+    pizza.costCalc();
+    $(".cost").html(pizza.totalCost);
   });
 })
 
