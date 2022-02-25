@@ -85,26 +85,58 @@ function displayPizzaDeets(pizzaToShow) {
   let htmlForPizzaInfo = "";
   Object.keys(pizzaToShow.toppings).forEach(function(key) {
     const pizzaStr = pizzaToShow.findTop(key);
-    htmlForPizzaInfo += "<li id=" + key + ">" + pizzaStr.topping + "</li>"; 
+    htmlForPizzaInfo += "<li id=" + key + ">" + pizzaStr.topping + " " +  pizzaStr.cost + " " + "USD" + "</li>"; 
   });
   toppingsList.html(htmlForPizzaInfo);
 }
-
-
 
 $(document).ready(function() {
   $("form#new-topping").submit(function(event) {
     event.preventDefault();
     $("input:checkbox[name=topping]:checked").each(function() {
       const inputtedTopping = $(this).val();
-      if (inputtedTopping ) // is a topping 
+      switch (inputtedTopping) {
+        case ("cheese"):
+          pizza.addTop(cheese);
+          break;
+        case ("pepperoni"):
+          pizza.addTop(pepperoni);
+          break;
+        case ("bacon"):
+          pizza.addTop(bacon);
+          break;
+        case ("chicken"):
+          pizza.addTop(chicken);
+          break;
+        case ("onion"):
+          pizza.addTop(onion);
+          break;
+        case ("peppers"):
+          pizza.addTop(peppers);
+          break;
+        case ("pineapple"):
+          pizza.addTop(pineapple);
+          break;
+        case ("chilis"):
+          pizza.addTop(chilis);
+          break;
+        case ("mushrooms"):
+          pizza.addTop(mushrooms);
+          break;
+        case ("sausage"):
+          pizza.addTop(sausage);
+          break;
+        default:
+          console.log("Not a default topping!")
+      }
     });
     let inputtedCustomTopName = $("input#new-custom-topping-name").val();
     let inputtedCustomTopCost = parseInt($("input#new-custom-topping-cost").val());
     $("input#new-custom-topping-name").val("");
     $("input#new-custom-topping-cost").val("");
+    if (inputtedCustomTopName.length != 0 && inputtedCustomTopCost != 0) {
     let customTop = new Toppings (inputtedCustomTopName,inputtedCustomTopCost);
-    pizza.addTop(customTop);
+    pizza.addTop(customTop);}
     displayPizzaDeets(pizza);
   });
 })
