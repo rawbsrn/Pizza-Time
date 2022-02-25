@@ -95,6 +95,10 @@ function displayPizzaDeets(pizzaToShow) {
 $(document).ready(function() {
   $("form#new-topping").submit(function(event) {
     event.preventDefault();
+    $("input:checkbox[name=topping]:checked").each(function() {
+      const inputtedTopping = $(this).val();
+      if (inputtedTopping ) // is a topping 
+    });
     let inputtedCustomTopName = $("input#new-custom-topping-name").val();
     let inputtedCustomTopCost = parseInt($("input#new-custom-topping-cost").val());
     $("input#new-custom-topping-name").val("");
