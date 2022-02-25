@@ -80,9 +80,20 @@ const chilis = new Toppings("Chili Peppers", 1);
 const mushrooms = new Toppings("Mushrooms", 1);
 const sausage = new Toppings("Sausage", 2);
 
+function displayPizzaDeets(pizzaToShow) {
+  let toppingsList = $("ul#show-pizza");
+  let htmlForPizzaInfo = "";
+  Object.keys(pizzaToShow.toppings).forEach(function(key) {
+    const pizza = pizzaToShow.findTop(key);
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.toppings + "</li>"; 
+  });
+  toppingsList.html(htmlForPizzaInfo);
+}
+
+
+
 $(document).ready(function() {
-  attachContactListeners();
-  $("form#new-contact").submit(function(event) {
+  $("form#new-topping").submit(function(event) {
     event.preventDefault();
     let inputtedCustomTopName = $("input#new-custom-topping-name").val();
     let inputtedCustomTopCost = parseInt($("input#new-custom-topping-cost").val());
@@ -90,7 +101,7 @@ $(document).ready(function() {
     $("input#new-custom-topping-cost").val("");
     let customTop = new Toppings (inputtedCustomTopName,inputtedCustomTopCost);
     pizza.addTop(customTop);
-    // Display pizza deets
+    displayPizzaDeets(pizza);
   });
 })
 
