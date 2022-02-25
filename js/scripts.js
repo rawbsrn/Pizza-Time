@@ -81,11 +81,11 @@ const mushrooms = new Toppings("Mushrooms", 1);
 const sausage = new Toppings("Sausage", 2);
 
 function displayPizzaDeets(pizzaToShow) {
-  let toppingsList = $("ul#show-pizza");
+  let toppingsList = $("ul#pizza");
   let htmlForPizzaInfo = "";
   Object.keys(pizzaToShow.toppings).forEach(function(key) {
-    const pizza = pizzaToShow.findTop(key);
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.toppings + "</li>"; 
+    const pizzaStr = pizzaToShow.findTop(key);
+    htmlForPizzaInfo += "<li id=" + key + ">" + pizzaStr.topping + "</li>"; 
   });
   toppingsList.html(htmlForPizzaInfo);
 }
